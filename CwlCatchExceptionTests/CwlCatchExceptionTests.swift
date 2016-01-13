@@ -21,17 +21,41 @@ import Foundation
 import XCTest
 import CwlCatchException
 
+class ExceptionSubclass: NSException {
+}
+
 class CatchExceptionTests: XCTestCase {
-    func testCatchException() {
-		let noException = NSException.catchException {
-		}
+	func testCatchException() {
+		// If no exception is thrown, result must be nil
+		let noException = NSException.catchException {}
 		XCTAssert(noException == nil)
 		
+		// An exception thrown should be caught by a "catch" of the same type
 		let exceptionA = NSException.catchException {
 			NSException(name: "a", reason: "b", userInfo: nil).raise()
 		}
 		XCTAssert(exceptionA != nil)
 		XCTAssert(exceptionA!.name == "a")
 		XCTAssert(exceptionA!.reason == "b")
-    }
+		
+		// An exception thrown should *not* be caught by a "catch" of a subtype
+		var exceptionC: NSException? = nil
+		let exceptionB = NSException.catchException {
+			exceptionC = ExceptionSubclass.catchException {
+				NSException(name: "c", reason: "d", userInfo: nil).raise()
+			}
+		}
+		XCTAssert(exceptionB != nil)
+		XCTAssert(exceptionB!.name == "c")
+		XCTAssert(exceptionB!.reason == "d")
+		XCTAssert(exceptionC == nil)
+		
+		// An exception thrown should be caught by a "catch" of a supertype
+		let exceptionD = NSException.catchException {
+			ExceptionSubclass(name: "e", reason: "f", userInfo: nil).raise()
+		}
+		XCTAssert(exceptionD != nil)
+		XCTAssert(exceptionD!.name == "e")
+		XCTAssert(exceptionD!.reason == "f")
+	}
 }
