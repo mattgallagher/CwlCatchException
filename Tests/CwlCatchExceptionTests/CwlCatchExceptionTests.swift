@@ -18,9 +18,11 @@
 //  IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 //
 
-import Foundation
 import XCTest
 import CwlCatchException
+#if SWIFT_PACKAGE
+import CwlCatchExceptionSupport
+#endif
 
 class TestException: NSException {
 	static var name: String = "com.cocoawithlove.TestException"

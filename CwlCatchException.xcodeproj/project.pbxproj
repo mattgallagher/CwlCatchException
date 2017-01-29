@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C90FA1B01C41E48100996A1F /* CwlCatchException.h in Headers */ = {isa = PBXBuildFile; fileRef = C90FA1AF1C41E48100996A1F /* CwlCatchException.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C90FA1B71C41E48100996A1F /* CwlCatchException.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90FA1AC1C41E48100996A1F /* CwlCatchException.framework */; };
-		C90FA1BC1C41E48100996A1F /* CwlCatchExceptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90FA1BB1C41E48100996A1F /* CwlCatchExceptionTests.swift */; };
 		C90FA2011C42071A00996A1F /* CwlCatchException.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90FA1F71C42071A00996A1F /* CwlCatchException.framework */; };
-		C90FA2101C420A1F00996A1F /* CwlCatchException.m in Sources */ = {isa = PBXBuildFile; fileRef = C90FA20E1C420A1F00996A1F /* CwlCatchException.m */; };
-		C90FA2111C420A1F00996A1F /* CwlCatchException.m in Sources */ = {isa = PBXBuildFile; fileRef = C90FA20E1C420A1F00996A1F /* CwlCatchException.m */; };
-		C90FA2121C420A1F00996A1F /* CwlCatchException.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90FA20F1C420A1F00996A1F /* CwlCatchException.swift */; };
-		C90FA2131C420A1F00996A1F /* CwlCatchException.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90FA20F1C420A1F00996A1F /* CwlCatchException.swift */; };
-		C90FA2141C420A6100996A1F /* CwlCatchExceptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90FA1BB1C41E48100996A1F /* CwlCatchExceptionTests.swift */; };
-		C90FA2151C420B4100996A1F /* CwlCatchException.h in Headers */ = {isa = PBXBuildFile; fileRef = C90FA1AF1C41E48100996A1F /* CwlCatchException.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9F3E85F1E3D9DAD00984605 /* CwlCatchException.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E85A1E3D9DAD00984605 /* CwlCatchException.swift */; };
+		C9F3E8601E3D9DAD00984605 /* CwlCatchException.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E85A1E3D9DAD00984605 /* CwlCatchException.swift */; };
+		C9F3E8611E3D9DAD00984605 /* CwlCatchException.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E85C1E3D9DAD00984605 /* CwlCatchException.m */; };
+		C9F3E8621E3D9DAD00984605 /* CwlCatchException.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E85C1E3D9DAD00984605 /* CwlCatchException.m */; };
+		C9F3E8631E3D9DAD00984605 /* CwlCatchException.h in Headers */ = {isa = PBXBuildFile; fileRef = C9F3E85E1E3D9DAD00984605 /* CwlCatchException.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9F3E8641E3D9DAD00984605 /* CwlCatchException.h in Headers */ = {isa = PBXBuildFile; fileRef = C9F3E85E1E3D9DAD00984605 /* CwlCatchException.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9F3E8661E3D9DBD00984605 /* CwlCatchExceptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E8651E3D9DBD00984605 /* CwlCatchExceptionTests.swift */; };
+		C9F3E8671E3D9DBD00984605 /* CwlCatchExceptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F3E8651E3D9DBD00984605 /* CwlCatchExceptionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,15 +38,14 @@
 
 /* Begin PBXFileReference section */
 		C90FA1AC1C41E48100996A1F /* CwlCatchException.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchException.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C90FA1AF1C41E48100996A1F /* CwlCatchException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CwlCatchException.h; sourceTree = "<group>"; };
-		C90FA1B11C41E48100996A1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C90FA1B61C41E48100996A1F /* CwlCatchException_macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CwlCatchException_macOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C90FA1BB1C41E48100996A1F /* CwlCatchExceptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CwlCatchExceptionTests.swift; sourceTree = "<group>"; };
-		C90FA1BD1C41E48100996A1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C90FA1F71C42071A00996A1F /* CwlCatchException.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchException.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90FA2001C42071A00996A1F /* CwlCatchException_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CwlCatchException_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C90FA20E1C420A1F00996A1F /* CwlCatchException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CwlCatchException.m; sourceTree = "<group>"; };
-		C90FA20F1C420A1F00996A1F /* CwlCatchException.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CwlCatchException.swift; sourceTree = "<group>"; };
+		C9F3E8581E3D9D8B00984605 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		C9F3E85A1E3D9DAD00984605 /* CwlCatchException.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CwlCatchException.swift; sourceTree = "<group>"; };
+		C9F3E85C1E3D9DAD00984605 /* CwlCatchException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CwlCatchException.m; sourceTree = "<group>"; };
+		C9F3E85E1E3D9DAD00984605 /* CwlCatchException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CwlCatchException.h; sourceTree = "<group>"; };
+		C9F3E8651E3D9DBD00984605 /* CwlCatchExceptionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CwlCatchExceptionTests.swift; path = Tests/CwlCatchExceptionTests/CwlCatchExceptionTests.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +85,9 @@
 		C90FA1A21C41E48100996A1F = {
 			isa = PBXGroup;
 			children = (
-				C90FA1AE1C41E48100996A1F /* CwlCatchException */,
+				C9F3E8581E3D9D8B00984605 /* Package.swift */,
+				C9F3E8591E3D9DAD00984605 /* CwlCatchException */,
+				C9F3E85B1E3D9DAD00984605 /* CwlCatchExceptionSupport */,
 				C90FA1BA1C41E48100996A1F /* CwlCatchExceptionTests */,
 				C90FA1AD1C41E48100996A1F /* Products */,
 			);
@@ -103,24 +104,39 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C90FA1AE1C41E48100996A1F /* CwlCatchException */ = {
-			isa = PBXGroup;
-			children = (
-				C90FA1AF1C41E48100996A1F /* CwlCatchException.h */,
-				C90FA20E1C420A1F00996A1F /* CwlCatchException.m */,
-				C90FA20F1C420A1F00996A1F /* CwlCatchException.swift */,
-				C90FA1B11C41E48100996A1F /* Info.plist */,
-			);
-			path = CwlCatchException;
-			sourceTree = "<group>";
-		};
 		C90FA1BA1C41E48100996A1F /* CwlCatchExceptionTests */ = {
 			isa = PBXGroup;
 			children = (
-				C90FA1BB1C41E48100996A1F /* CwlCatchExceptionTests.swift */,
-				C90FA1BD1C41E48100996A1F /* Info.plist */,
+				C9F3E8651E3D9DBD00984605 /* CwlCatchExceptionTests.swift */,
 			);
 			path = CwlCatchExceptionTests;
+			sourceTree = "<group>";
+		};
+		C9F3E8591E3D9DAD00984605 /* CwlCatchException */ = {
+			isa = PBXGroup;
+			children = (
+				C9F3E85A1E3D9DAD00984605 /* CwlCatchException.swift */,
+			);
+			name = CwlCatchException;
+			path = Sources/CwlCatchException;
+			sourceTree = "<group>";
+		};
+		C9F3E85B1E3D9DAD00984605 /* CwlCatchExceptionSupport */ = {
+			isa = PBXGroup;
+			children = (
+				C9F3E85C1E3D9DAD00984605 /* CwlCatchException.m */,
+				C9F3E85D1E3D9DAD00984605 /* include */,
+			);
+			name = CwlCatchExceptionSupport;
+			path = Sources/CwlCatchExceptionSupport;
+			sourceTree = "<group>";
+		};
+		C9F3E85D1E3D9DAD00984605 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				C9F3E85E1E3D9DAD00984605 /* CwlCatchException.h */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +146,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90FA1B01C41E48100996A1F /* CwlCatchException.h in Headers */,
+				C9F3E8631E3D9DAD00984605 /* CwlCatchException.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +154,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90FA2151C420B4100996A1F /* CwlCatchException.h in Headers */,
+				C9F3E8641E3D9DAD00984605 /* CwlCatchException.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,8 +317,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90FA2121C420A1F00996A1F /* CwlCatchException.swift in Sources */,
-				C90FA2101C420A1F00996A1F /* CwlCatchException.m in Sources */,
+				C9F3E8611E3D9DAD00984605 /* CwlCatchException.m in Sources */,
+				C9F3E85F1E3D9DAD00984605 /* CwlCatchException.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90FA1BC1C41E48100996A1F /* CwlCatchExceptionTests.swift in Sources */,
+				C9F3E8661E3D9DBD00984605 /* CwlCatchExceptionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,8 +334,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90FA2131C420A1F00996A1F /* CwlCatchException.swift in Sources */,
-				C90FA2111C420A1F00996A1F /* CwlCatchException.m in Sources */,
+				C9F3E8621E3D9DAD00984605 /* CwlCatchException.m in Sources */,
+				C9F3E8601E3D9DAD00984605 /* CwlCatchException.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C90FA2141C420A6100996A1F /* CwlCatchExceptionTests.swift in Sources */,
+				C9F3E8671E3D9DBD00984605 /* CwlCatchExceptionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +395,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"NON_SWIFT_PACKAGE=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -423,6 +440,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "NON_SWIFT_PACKAGE=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -449,7 +467,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = CwlCatchException/Info.plist;
+				INFOPLIST_FILE = CwlCatchException.xcodeproj/CwlCatchException_Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -472,7 +490,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = CwlCatchException/Info.plist;
+				INFOPLIST_FILE = CwlCatchException.xcodeproj/CwlCatchException_Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -487,7 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = CwlCatchExceptionTests/Info.plist;
+				INFOPLIST_FILE = CwlCatchException.xcodeproj/CwlCatchExceptionTests_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoawithlove.CwlCatchExceptionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -499,7 +517,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = CwlCatchExceptionTests/Info.plist;
+				INFOPLIST_FILE = CwlCatchException.xcodeproj/CwlCatchExceptionTests_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoawithlove.CwlCatchExceptionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,7 +534,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CwlCatchException/Info.plist;
+				INFOPLIST_FILE = CwlCatchException.xcodeproj/CwlCatchException_Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -539,7 +557,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CwlCatchException/Info.plist;
+				INFOPLIST_FILE = CwlCatchException.xcodeproj/CwlCatchException_Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -557,7 +575,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = CwlCatchExceptionTests/Info.plist;
+				INFOPLIST_FILE = CwlCatchException.xcodeproj/CwlCatchExceptionTests_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cocoawithlove.CwlCatchException-iOSTests";
@@ -571,7 +589,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = CwlCatchExceptionTests/Info.plist;
+				INFOPLIST_FILE = CwlCatchException.xcodeproj/CwlCatchExceptionTests_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cocoawithlove.CwlCatchException-iOSTests";
