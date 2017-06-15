@@ -29,7 +29,7 @@ Add the following to the `dependencies` array in your "Package.swift" file:
 
 Or, if you're using the `swift-tools-version:4.0` package manager, add the following to the `dependencies` array in your "Package.swift" file:
 
-> .package(url: "https://github.com/mattgallagher/CwlCatchException", majorVersion: 1)
+> .package(url: "https://github.com/mattgallagher/CwlCatchException.git", majorVersion: 1)
 
 ### CocoaPods
 
