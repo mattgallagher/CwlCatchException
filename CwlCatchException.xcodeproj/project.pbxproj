@@ -246,11 +246,11 @@
 				TargetAttributes = {
 					C90FA1AB1C41E48100996A1F = {
 						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0910;
 					};
 					C90FA1B51C41E48100996A1F = {
 						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0910;
 					};
 					C90FA1F61C42071A00996A1F = {
 						CreatedOnToolsVersion = 7.2;
@@ -490,6 +490,7 @@
 				PRODUCT_NAME = CwlCatchException;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -511,6 +512,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoawithlove.CwlCatchException;
 				PRODUCT_NAME = CwlCatchException;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -522,6 +524,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoawithlove.CwlCatchExceptionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -533,6 +536,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoawithlove.CwlCatchExceptionTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
