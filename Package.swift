@@ -3,9 +3,12 @@ import PackageDescription
 
 let package = Package(
 	name: "CwlCatchException",
+	products: [
+		.library(name: "CwlCatchException", type: .dynamic, targets: ["CwlCatchException"]),
+	],
 	targets: [
-		.target(name: "CwlCatchException", dependencies: ["CwlCatchExceptionSupport"]),
+		.target(name: "CwlCatchException", dependencies: [.target(name: "CwlCatchExceptionSupport")]),
 		.target(name: "CwlCatchExceptionSupport"),
-		.testTarget(name: "CwlCatchExceptionTests", dependencies: ["CwlCatchException"])
+		.testTarget(name: "CwlCatchExceptionTests", dependencies: [.target(name: "CwlCatchException")])
 	]
 )
