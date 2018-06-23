@@ -242,7 +242,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 1000;
-				ORGANIZATIONNAME = "Matt Gallagher ( http://cocoawithlove.com )";
+				ORGANIZATIONNAME = "Matt Gallagher ( https://www.cocoawithlove.com )";
 				TargetAttributes = {
 					C90FA1AB1C41E48100996A1F = {
 						CreatedOnToolsVersion = 7.2;
