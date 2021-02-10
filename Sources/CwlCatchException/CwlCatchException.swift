@@ -32,4 +32,36 @@ extension NSException {
 	public static func catchException(in block: () -> Void) -> Self? {
 		return catchReturnTypeConverter(self, block: block)
 	}
+
+	public static func catchAsError<T>(in block: (() throws -> T)) throws -> T {
+		var result: Result<T, Error>?
+
+		let exception = Self.catchException {
+			result = Result(catching: block)
+		}
+
+		if let exception = exception {
+			throw ExceptionError(exception)
+		} else {
+			return try result!.get()
+		}
+	}
+}
+
+public struct ExceptionError<T: NSException>: CustomNSError {
+	public let exception: T
+	public let domain = "com.cocoawithlove.catch-exception"
+	public let errorUserInfo: [String: Any]
+
+	public init(_ exception: T) {
+		self.exception = exception
+
+		if let userInfo = exception.userInfo {
+			self.errorUserInfo = [String: Any](uniqueKeysWithValues: userInfo.map { pair in
+				(pair.key.description, pair.value)
+			})
+		} else {
+			self.errorUserInfo = [:]
+		}
+	}
 }

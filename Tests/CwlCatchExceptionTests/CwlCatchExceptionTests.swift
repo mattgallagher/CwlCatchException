@@ -26,8 +26,8 @@ import CwlCatchExceptionSupport
 
 class TestException: NSException {
 	static var name: String = "com.cocoawithlove.TestException"
-	init() {
-		super.init(name: NSExceptionName(rawValue: TestException.name), reason: nil, userInfo: nil)
+	init(userInfo: [AnyHashable: Any]? = nil) {
+		super.init(name: NSExceptionName(rawValue: TestException.name), reason: nil, userInfo: userInfo)
 	}
 	required public init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
@@ -51,9 +51,9 @@ class CatchExceptionTests: XCTestCase {
 			reachedPoint2 = true
 		}
 		// We must get a valid BadInstructionException
-		XCTAssert(exception1 != nil)
-		XCTAssert(reachedPoint1)
-		XCTAssert(!reachedPoint2)
+		XCTAssertNotNil(exception1)
+		XCTAssertTrue(reachedPoint1)
+		XCTAssertFalse(reachedPoint2)
 		
 		// Test without catching an assertion failure
 		var reachedPoint3 = false
@@ -70,11 +70,41 @@ class CatchExceptionTests: XCTestCase {
 			reachedPoint5 = true
 		}
 		// We must not get a BadInstructionException without an assertion
-		XCTAssert(exception4 != nil)
-		XCTAssert(exception3 == nil)
-		XCTAssert(reachedPoint3)
-		XCTAssert(!reachedPoint4)
-		XCTAssert(!reachedPoint5)
+		XCTAssertNotNil(exception4)
+		XCTAssertNil(exception3)
+		XCTAssertTrue(reachedPoint3)
+		XCTAssertFalse(reachedPoint4)
+		XCTAssertFalse(reachedPoint5)
 	#endif
+	}
+
+	func testThrowingExceptionWithExceptionRaised() throws {
+		let exception = TestException(userInfo: [NSLocalizedFailureReasonErrorKey: "Reason"])
+		do {
+			try TestException.catchAsError {
+				exception.raise()
+			}
+		} catch let error as ExceptionError<TestException> {
+			XCTAssertEqual(error.exception, exception)
+			XCTAssertEqual(error.errorUserInfo[NSLocalizedFailureReasonErrorKey] as? String, "Reason")
+		}
+	}
+
+	func testThrowingExceptionWithThrowingBlock() throws {
+		let urlError = URLError(.badURL)
+		do {
+			try NSException.catchAsError {
+				throw urlError
+			}
+		} catch let error as URLError {
+			XCTAssertEqual(error, urlError)
+		}
+	}
+
+	func testThrowingExceptionWithNonThrowingBlock() throws {
+		let value = try NSException.catchAsError {
+			return 42
+		}
+		XCTAssertEqual(value, 42)
 	}
 }
