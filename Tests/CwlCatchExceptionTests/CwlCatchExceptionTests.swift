@@ -35,65 +35,46 @@ class TestException: NSException {
 }
 
 class CatchExceptionTests: XCTestCase {
-	func testCatchException() {
-	#if arch(x86_64)
-		// Test catching an assertion failure
-		var reachedPoint1 = false
-		var reachedPoint2 = false
-		let exception1: TestException? = TestException.catchException {
-			// Must invoke this block
-			reachedPoint1 = true
-			
-			// Exception raised
-			TestException().raise()
-
-			// Exception must be thrown so that this point is never reached
-			reachedPoint2 = true
+	func test_when_exception_raised_then_catchexception_returns_exception() {
+		let exception = TestException.catchException {
+			TestException(userInfo: [NSLocalizedFailureReasonErrorKey: "Reason"]).raise()
 		}
-		// We must get a valid BadInstructionException
-		XCTAssertNotNil(exception1)
-		XCTAssertTrue(reachedPoint1)
-		XCTAssertFalse(reachedPoint2)
-		
-		// Test without catching an assertion failure
-		var reachedPoint3 = false
-		var reachedPoint4 = false
-		var reachedPoint5 = false
-		var exception3: TestException? = nil
-		let exception4: NSException? = NSException.catchException {
-			exception3 = TestException.catchException {
-				// Must invoke this block
-				reachedPoint3 = true
-				NSException(name: NSExceptionName.rangeException, reason: nil, userInfo: nil).raise()
-				reachedPoint4 = true
-			}
-			reachedPoint5 = true
-		}
-		// We must not get a BadInstructionException without an assertion
-		XCTAssertNotNil(exception4)
-		XCTAssertNil(exception3)
-		XCTAssertTrue(reachedPoint3)
-		XCTAssertFalse(reachedPoint4)
-		XCTAssertFalse(reachedPoint5)
-	#endif
+		XCTAssertEqual(exception?.name, NSExceptionName(rawValue: TestException.name))
 	}
 
-	func testThrowingExceptionWithExceptionRaised() throws {
+	func test_when_exception_raised_of_other_type_then_catchexception_returns_nil() {
+		var inner: TestException?
+		let outer = NSException.catchException {
+			inner = TestException.catchException {
+				NSException(name: NSExceptionName.rangeException, reason: nil, userInfo: nil).raise()
+			}
+		}
+		XCTAssertNil(inner)
+		XCTAssertNotNil(outer)
+	}
+
+	func test_when_no_exception_raised_then_catchexception_returns_nil() {
+		let exception = TestException.catchException {
+		}
+		XCTAssertNil(exception)
+	}
+
+	func test_when_exception_raised_then_catchexceptionaserror_throws_exceptionerror() throws {
 		let exception = TestException(userInfo: [NSLocalizedFailureReasonErrorKey: "Reason"])
 		do {
-			try TestException.catchAsError {
+			try catchExceptionAsError {
 				exception.raise()
 			}
-		} catch let error as ExceptionError<TestException> {
+		} catch let error as ExceptionError {
 			XCTAssertEqual(error.exception, exception)
 			XCTAssertEqual(error.errorUserInfo[NSLocalizedFailureReasonErrorKey] as? String, "Reason")
 		}
 	}
 
-	func testThrowingExceptionWithThrowingBlock() throws {
+	func test_when_error_thrown_then_catchexceptionaserror_rethrows() throws {
 		let urlError = URLError(.badURL)
 		do {
-			try NSException.catchAsError {
+			try catchExceptionAsError {
 				throw urlError
 			}
 		} catch let error as URLError {
@@ -101,8 +82,8 @@ class CatchExceptionTests: XCTestCase {
 		}
 	}
 
-	func testThrowingExceptionWithNonThrowingBlock() throws {
-		let value = try NSException.catchAsError {
+	func test_when_neither_error_nor_exception_thrown_then_catchexceptionaserror_returns_result() throws {
+		let value = try catchExceptionAsError {
 			return 42
 		}
 		XCTAssertEqual(value, 42)
