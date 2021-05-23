@@ -20,7 +20,7 @@
 
 #import "CwlCatchException.h"
 
-NSException* __nullable catchExceptionOfKind(Class __nonnull type, void (^ __nonnull inBlock)(void)) {
+NSException* __nullable catchExceptionOfKind(Class __nonnull type, void (^ NS_NOESCAPE __nonnull inBlock)(void)) {
 	@try {
 		inBlock();
 	} @catch (NSException *exception) {
