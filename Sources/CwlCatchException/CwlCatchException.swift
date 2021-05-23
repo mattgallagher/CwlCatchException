@@ -24,12 +24,44 @@ import Foundation
 import CwlCatchExceptionSupport
 #endif
 
-private func catchReturnTypeConverter<T: NSException>(_ type: T.Type, block: () -> Void) -> T? {
-	return catchExceptionOfKind(type, block) as? T
+private func catchReturnTypeConverter<Exception: NSException>(_ type: Exception.Type, block: () -> Void) -> Exception? {
+	return catchExceptionOfKind(type, block) as? Exception
 }
 
 extension NSException {
 	public static func catchException(in block: () -> Void) -> Self? {
 		return catchReturnTypeConverter(self, block: block)
+	}
+}
+
+public func catchExceptionAsError<Output>(in block: (() throws -> Output)) throws -> Output {
+	var result: Result<Output, Error>?
+
+	let exception = NSException.catchException {
+		result = Result(catching: block)
+	}
+
+	if let exception = exception {
+		throw ExceptionError(exception)
+	} else {
+		return try result!.get()
+	}
+}
+
+public struct ExceptionError: CustomNSError {
+	public let exception: NSException
+	public let domain = "com.cocoawithlove.catch-exception"
+	public let errorUserInfo: [String: Any]
+
+	public init(_ exception: NSException) {
+		self.exception = exception
+
+		if let userInfo = exception.userInfo {
+			self.errorUserInfo = [String: Any](uniqueKeysWithValues: userInfo.map { pair in
+				(pair.key.description, pair.value)
+			})
+		} else {
+			self.errorUserInfo = [:]
+		}
 	}
 }
