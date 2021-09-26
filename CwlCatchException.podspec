@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CwlCatchException'
-  s.version      = '2.1.0'
+  s.version      = '2.1.1'
   s.summary      = 'A simple Swift wrapper around an Objective-C `@try`/`@catch` statements.'
   s.homepage     = 'https://github.com/mattgallagher/CwlCatchException'
   s.license      = { :file => 'LICENSE.txt', :type => 'ISC' }
