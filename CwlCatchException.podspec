@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
   s.swift_version = '5.0'
 
-  s.dependency 'CwlCatchExceptionSupport', '~> 2.0'
+  s.dependency 'CwlCatchExceptionSupport', '~> 2.1.1'
 
   s.test_spec 'Tests' do |test_spec|
     test_spec.source_files = 'Tests/**/*.swift'
