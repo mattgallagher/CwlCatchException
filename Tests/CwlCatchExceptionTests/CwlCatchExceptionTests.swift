@@ -20,7 +20,7 @@
 
 import XCTest
 import CwlCatchException
-#if SWIFT_PACKAGE
+#if SWIFT_PACKAGE || COCOAPODS
 import CwlCatchExceptionSupport
 #endif
 
