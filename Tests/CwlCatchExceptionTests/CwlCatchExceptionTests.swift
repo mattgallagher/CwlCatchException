@@ -71,6 +71,19 @@ class CatchExceptionTests: XCTestCase {
 		}
 	}
 
+    func test_when_exception_raised_then_catchexceptionaserror_throws_exceptionerror_no_userinfo() throws {
+        let exception = TestException(userInfo: nil)
+        do {
+            try catchExceptionAsError {
+                exception.raise()
+            }
+        } catch let error as ExceptionError {
+            XCTAssertEqual(error.exception, exception)
+            XCTAssertNotNil(error.errorUserInfo)
+            XCTAssertTrue(error.errorUserInfo.isEmpty)
+        }
+    }
+
 	func test_when_error_thrown_then_catchexceptionaserror_rethrows() throws {
 		let urlError = URLError(.badURL)
 		do {

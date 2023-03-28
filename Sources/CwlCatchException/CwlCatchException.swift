@@ -43,10 +43,15 @@ public func catchExceptionAsError<Output>(in block: (() throws -> Output)) throw
 
 	if let exception = exception {
 		throw ExceptionError(exception)
-	} else {
-		return try result!.get()
 	}
+    
+	return try result!.get()
 }
+
+/**
+ Adding conformance so that ExceptionError is fully Sendable as part of CustomNSError
+ */
+extension NSException: @unchecked Sendable { }
 
 public struct ExceptionError: CustomNSError {
 	public let exception: NSException
