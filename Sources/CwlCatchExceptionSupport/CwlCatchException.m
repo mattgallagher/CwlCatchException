@@ -18,7 +18,7 @@
 //  IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 //
 
-#import "CwlCatchException.h"
+#import <CwlCatchException.h>
 
 NSException* __nullable catchExceptionOfKind(Class __nonnull type, void (^ NS_NOESCAPE __nonnull inBlock)(void)) {
 	@try {

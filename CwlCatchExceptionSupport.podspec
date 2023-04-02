@@ -11,7 +11,12 @@ Pod::Spec.new do |s|
                    }
   
   s.source_files = 'Sources/CwlCatchExceptionSupport/**/*.{h,m}'
-
+  
+  s.ios.deployment_target = '12.0'
+  s.osx.deployment_target = '10.14'
+  
+  s.swift_version = '5.5'
+  
   s.ios.deployment_target = '12.0'
   s.osx.deployment_target = '10.14'
 end
