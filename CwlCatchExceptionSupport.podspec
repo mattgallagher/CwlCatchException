@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'CwlCatchExceptionSupport'
-  s.version      = '2.1.1'
+  s.version      = '2.1.2'
   s.summary      = 'Objective-C internal library used by CwlCatchException'
   s.homepage     = 'https://github.com/mattgallagher/CwlCatchException'
   s.license      = { :file => 'LICENSE.txt', :type => 'ISC' }
@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
   s.source_files = 'Sources/CwlCatchExceptionSupport/**/*.{h,m}'
 
   s.ios.deployment_target = '12.0'
-  s.osx.deployment_target = '10.10'
+  s.osx.deployment_target = '10.14'
 end
