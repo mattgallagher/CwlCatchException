@@ -24,7 +24,7 @@ import CwlCatchException
 import CwlCatchExceptionSupport
 #endif
 
-class TestException: NSException {
+class TestException: NSException, @unchecked Sendable {
 	static var name: String = "com.cocoawithlove.TestException"
 	init(userInfo: [AnyHashable: Any]? = nil) {
 		super.init(name: NSExceptionName(rawValue: TestException.name), reason: nil, userInfo: userInfo)

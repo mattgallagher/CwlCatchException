@@ -49,7 +49,7 @@ public func catchExceptionAsError<Output>(in block: (() throws -> Output)) throw
 }
 
 // Adding conformance so that ExceptionError is fully Sendable as part of CustomNSError
-extension NSException: @unchecked Sendable { }
+extension NSException: @unchecked @retroactive Sendable { }
 
 public struct ExceptionError: CustomNSError {
 	public let exception: NSException
