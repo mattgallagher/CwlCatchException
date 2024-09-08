@@ -49,7 +49,12 @@ public func catchExceptionAsError<Output>(in block: (() throws -> Output)) throw
 }
 
 // Adding conformance so that ExceptionError is fully Sendable as part of CustomNSError
+#if compiler(<6.0)
 extension NSException: @unchecked Sendable { }
+#else
+// @retroactive not available until Xcode 16 / Swift 6
+extension NSException: @unchecked @retroactive Sendable { }
+#endif
 
 public struct ExceptionError: CustomNSError {
 	public let exception: NSException
